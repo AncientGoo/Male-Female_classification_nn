@@ -2,4 +2,4 @@
 
 test_gender.py is callable from command line with 1 argument - path to .wav file
 
-`python test_gender.py wav_files/file.wav`
+`python3 test_gender.py wav_files/file.wav`
