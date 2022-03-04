@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 jupyter = "*"
 librosa = "*"
+tensorflow-rocm = "*"
+numpy = "*"
+matplotlib = "*"
 
 [dev-packages]
 
