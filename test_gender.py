@@ -1,9 +1,8 @@
-from importlib.resources import path
+#from importlib.resources import path
 import tensorflow as tf
 import numpy as np
 import librosa
 import sys
-
 
 
 def predict_wav():
@@ -21,8 +20,14 @@ def predict_wav():
     audio = np.expand_dims(stft_sum, axis=0)
     
     model = tf.keras.models.load_model(modelpath)
-    prediction = model.predict(audio)
+    prediction = model.predict(audio)[0][0]
     
+    if prediction >= 0.5:
+      print('Given file is Male voice \n', 'Model prediction =', prediction)
+
+    else:
+      print('Given file is Female voice \n', 'Model prediction =', prediction)
+      
     return prediction
 
 predict_wav()
